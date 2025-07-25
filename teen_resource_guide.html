@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Support Network - Houston Teen Resources</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #ff6b6b, #ffa726);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .emoji {
+            font-size: 2rem;
+            margin: 0 10px;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .resource-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #ffa726, #4ecdc4, #45b7d1);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .build-logo { background: linear-gradient(135deg, #4ecdc4, #44a08d); }
+        .united-logo { background: linear-gradient(135deg, #ff6b6b, #ee5a52); }
+        .volunteer-logo { background: linear-gradient(135deg, #ffa726, #ff7043); }
+        .church-logo { background: linear-gradient(135deg, #667eea, #764ba2); }
+        
+        .resource-card h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .contact-icon {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .emergency-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 3px solid #ff6b6b;
+        }
+        
+        .emergency-section h2 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .emergency-numbers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .emergency-number {
+            background: linear-gradient(135deg, #ff6b6b, #ffa726);
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .resource-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Your Support Network</h1>
+            <p>Houston Community Resources for Teens & Young Families</p>
+            <div>
+                <span class="emoji">🌟</span>
+                <span class="emoji">💪</span>
+                <span class="emoji">🤝</span>
+                <span class="emoji">❤️</span>
+            </div>
+        </div>
+        
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="logo-placeholder build-logo">BH</div>
+                <h2>BUILD Health Challenge</h2>
+                <div class="description">
+                    Supports community-led health initiatives that address social determinants of health. They work with local organizations to improve health outcomes for teens and families through collaborative programs and funding.
+                </div>
+                <div class="contact-info">
+                    <h3>📞 Get Connected</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">🌐</span>
+                        buildhealthchallenge.org
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        Visit website for contact form
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🎯</span>
+                        Community health programs
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resource-card">
+                <div class="logo-placeholder united-logo">UW</div>
+                <h2>United Way of Greater Houston</h2>
+                <div class="description">
+                    Provides essential services including food assistance, housing support, utility help, transportation vouchers, and emergency aid. They connect families to resources and provide immediate assistance during crises.
+                </div>
+                <div class="contact-info">
+                    <h3>📞 Get Help Now</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        Call 211 (24/7 helpline)
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🌐</span>
+                        unitedwayhouston.org
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🏠</span>
+                        Basic needs support
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resource-card">
+                <div class="logo-placeholder volunteer-logo">VH</div>
+                <h2>Volunteer Houston</h2>
+                <div class="description">
+                    Connects you with volunteer opportunities and community organizations. Great for finding ways to give back, gain experience, build your resume, and connect with other caring people in your community.
+                </div>
+                <div class="contact-info">
+                    <h3>📞 Get Involved</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">🌐</span>
+                        volunteerhou.org
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        info@volunteerhouston.org
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🤝</span>
+                        Volunteer opportunities
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resource-card">
+                <div class="logo-placeholder church-logo">FM</div>
+                <h2>First Methodist Houston</h2>
+                <div class="description">
+                    Offers community support through volunteer programs, food pantry services, and various outreach ministries. Provides a welcoming environment for families seeking assistance and community connection.
+                </div>
+                <div class="contact-info">
+                    <h3>📞 Connect With Us</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">🌐</span>
+                        fmhouston.com/volunteer
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        Contact through website
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🍽️</span>
+                        Food pantry & support
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="emergency-section">
+            <h2>🚨 Need Help Right Now?</h2>
+            <p>These numbers are available 24/7 for immediate assistance</p>
+            <div class="emergency-numbers">
+                <div class="emergency-number">
+                    🆘 Crisis Hotline<br>
+                    <strong>988</strong>
+                </div>
+                <div class="emergency-number">
+                    📞 General Help<br>
+                    <strong>211</strong>
+                </div>
+                <div class="emergency-number">
+                    🚨 Emergency<br>
+                    <strong>911</strong>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>💜 Remember: Asking for help is a sign of strength, not weakness 💜</p>
+            <p>You've got this! Your community is here to support you.</p>
+        </div>
+    </div>
+</body>
+</html>
